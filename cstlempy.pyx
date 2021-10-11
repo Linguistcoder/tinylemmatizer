@@ -9,6 +9,7 @@ cdef extern from "tinylemmatizer.h":
 def init(Str):
     cdef int Err
     startProc(bytes(Str,'iso8859-1'),&Err)
+    return Err
 
 # Function to lemmatize a full form
 def lemmatize(Str):
