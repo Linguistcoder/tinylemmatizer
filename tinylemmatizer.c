@@ -219,7 +219,7 @@ static LemmaRule* addLemma(LemmaRule* lemmas, lemmaCandidate* lemma)
                     return lemmas;
                     }
                 }
-            LemmaRule* nlemmas = calloc(i + 2, sizeof(LemmaRule));
+            LemmaRule* nlemmas = (LemmaRule*)calloc(i + 2, sizeof(LemmaRule));
             for (i = 0; lemmas[i].Lem; ++i)
                 {
                 nlemmas[i] = lemmas[i];
@@ -481,7 +481,7 @@ int readRules(const char* filename)
         buflen = ftell(flexrulefile);
         fseek(flexrulefile, sizeof(int), SEEK_SET);
         buflen -= sizeof(int);
-        buf = malloc(buflen + 1);
+        buf = (char*)malloc(buflen + 1);
         if (buf && buflen > 0)
             {
             if (fread(buf, 1, buflen, flexrulefile) != (size_t)buflen)
@@ -536,7 +536,7 @@ int main(int argc, char ** argv)
                 if (fullform)
                     {
                     stringEval(fullform, &res, &err);
-                    printf("%s",res);
+                    printf("%s\n",res);
                     }
                 else
                     {
