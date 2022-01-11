@@ -1,5 +1,5 @@
 # tinylemmatizer
-Simple lemmatizer that uses the same linguistic resources as CSTlemma 
+Simple lemmatizer that uses the same lemmatization rules as CSTlemma. 
 
 This project consists of a Python3 wrapper around a small C-program that lemmatizes full forms using a rule set ('flexrules') that is in the same binary format as the rule sets used by cstlemma (https://github.com/kuhumcst/cstlemma).
 Rule sets can be trained using the affixtrain proram (https://github.com/kuhumcst/affixtrain). Alternatively, rule sets can be downloaded from https://github.com/kuhumcst/texton-linguistic-resources. Look for files in folders such as
