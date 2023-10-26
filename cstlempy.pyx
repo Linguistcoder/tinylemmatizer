@@ -17,7 +17,7 @@ def lemmatize(Str):
     cdef int Err
     stringEval(bytes(Str,'iso8859-1'),&Sout,&Err)
     cdef bytes py_string = Sout
-    return py_string.decode('UTF-8')
+    return py_string
 
 # Function to be called after the last call to lemmatize()
 def final():
